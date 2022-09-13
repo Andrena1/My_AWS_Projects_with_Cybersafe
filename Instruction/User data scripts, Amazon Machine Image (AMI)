@@ -1,0 +1,5 @@
+AMI (Amazon Machine Image)
+•	Click on the webserver, then actions
+•	Click on image and templates, then create image
+•	Type in image name and leave default settings as it is
+•	Click on create image, scroll down on the EC2 to view the AMI 
