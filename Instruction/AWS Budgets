@@ -1,0 +1,14 @@
+Steps to create an AWS Budget
+•	Log into the management console 
+•	Search for AWS Cost Explorer and click on it
+•	Click on budgets, then create budgets
+•	Select cost budget
+•	Type in the name and period of the budget (preferably monthly because you are charged monthly)
+•	Select recurring budget if you want the budget to be renewed monthly
+•	Click on fixed budget if you don’t want the size of the budget to change monthly
+•	Enter your budget amount, select all AWS services as the budget scope
+•	Select unblended cost (this shows your cost on the day they are charged to you)
+•	Under support charge types, select all
+•	Choose an alert threshold, 80% or any value you prefer (it would alert you when you have spent 80% of your budget
+•	Type in the email address you will receive notifications on
+•	Review the budget options and then click create
