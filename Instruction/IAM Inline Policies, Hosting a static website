@@ -1,0 +1,41 @@
+IAM Inline policies, Hosting a static website
+
+IAM Inline policies
+•	Create a user called Auditor using the steps previously mentioned, however do not assign any permissions to this user
+•	Type in ‘Name’ as the key and ‘Auditors’ as the value
+•	Review and create user
+•	Download the .csv file and rename it
+•	Click on the auditor user, permissions and then add inline policy
+•	Google AWS IAM read only access to the IAM console
+•	Copy the code in the documentation
+•	Delete the initial code in the JSON column and paste the code copied from the documentation
+•	Review policy and name it AuditorReadOnly
+•	Click on create policy
+
+If you would like to give them read only access to a particular service or services
+•	Click on the user, then add permissions
+•	Select attach already existing policy, search for s3 read only option or any other service you need
+•	Click on the option, review and then create permission
+
+Hosting a static website
+•	Download the source code of the website you would like to host
+•	Search for s3 in the AWS management console
+•	Click on buckets, then create buckets
+•	Type in bucket name (a unique name that no one else has used), choose North Virginia as your region
+•	Allow public access, enable object versioning 
+•	Enable server side encryption, select Amazon S3 key
+•	Click on Advanced setting, disable object lock
+•	Create bucket
+•	Click on the bucket, then upload
+•	Drag the files for the source code into the bucket
+•	Leave other options as they are, click upload
+•	Click close, then click on properties
+•	Select static website hosting, then edit
+•	Enable static website hosting, under index document type in ‘index.html’
+•	Click save changes
+•	Scroll down to the bottom of properties and click on the link to the website
+•	Incase you get an error message, go to permissions
+•	Click on edit bucket policy, copy and paste the code from the AWS documentation on ‘granting read only permissions to an anonymous user 
+•	Save changes, click on the link again it should work now
+
+http://dumebiswebsite.s3-website-us-east-1.amazonaws.com/
