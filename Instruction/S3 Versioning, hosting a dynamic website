@@ -1,0 +1,39 @@
+S3 Versioning
+•	Click on create bucket, type in a bucket name
+•	Block public access
+•	Enable object versioning and serve side encryption
+•	Select Amazon S3 key, then create budget
+•	Create a text file on your PC and drag it into the new bucket created
+•	Click upload
+•	Overwrite the file on your PC, drag the new version to the same bucket and upload
+•	Click show versions to display the two versions of the file
+
+NB: If a document is deleted by accident, a delete marker will be placed on it. Deleting the delete marker will retrieve the document.
+
+Hosting a dynamic website
+•	In order for EC2 to be able to communicate with S3, a role for EC2 has to be created
+•	Search for IAM, click roles
+•	Select create roles, select EC2
+•	Go to permissions, select S3fullacccess permission 
+•	Review, then type in the name of the role
+•	After creating the role, go to EC2
+•	Click on launch instances, type in the name of the instance
+•	Select Amazon Linux 2 and free tier
+•	Create new key pair, type in a key pair and leave default settings
+•	Select all 3 options in the security group and click on the instance profile
+•	Choose shared as a tenancy option, type 1 as the number of instances
+•	Leave all other default settings, click on launch instance
+•	Download and install mobaXterm
+•	On the app, click sessions, select SSH
+•	Specify username; ec2-user, under advanced settings tick use private key
+•	Import the download key pair from your PC and click ok
+•	Once the terminal is up, execute each line of code one after the other
+
+sudo yum update -y
+sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+sudo yum install -y httpd mariadb-server
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo systemctl is-enabled httpd
+sudo aws s3 cp s3://(name of the bucket) --region us-east-1 /var/www/html/ --recursive
+•	Go back to the bucket, copy the public ipv4 DNS and paste it on a new tab and the dynamic website will load
